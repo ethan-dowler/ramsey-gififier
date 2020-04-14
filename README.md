@@ -9,10 +9,24 @@ This is just a novelty action, but feel free to use it. If you'd like to contrib
 ## Usage
 
 ```yaml
-- name: Ramsey GIFifier
-  uses: ethan-dowler/ramsey-gififier@master
-  with:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+# .github/workflows/ramsey_gifs.yml
+name: Ramsey GIFifier
+
+on:
+  # Run this workflow only when a new pull request is opened
+  # compare: https://git.io/JvTyV
+  pull_request:
+    types: [opened]
+
+jobs:
+  ramsey-gififier:
+    name: Ramsey GIFifier
+    runs-on: ubuntu-latest
+    steps:
+    - name: Ramsey GIFifier
+      uses: ethan-dowler/ramsey-gififier@0.3
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 ## Deployment
