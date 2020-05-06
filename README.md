@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Ramsey GIFifier
-      uses: ethan-dowler/ramsey-gififier@0.3
+      uses: ethan-dowler/ramsey-gififier@master
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
