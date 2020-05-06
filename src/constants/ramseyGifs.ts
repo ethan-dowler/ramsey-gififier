@@ -19,8 +19,6 @@ const ramseyGifs: string[] = [
   'https://media.giphy.com/media/7XAQ8HRQfhD5SH1HRd/giphy.gif',
   'https://media.giphy.com/media/pPmJWO6Uo2zxna5wcu/giphy.gif',
   // Hogan
-  'https://media.giphy.com/media/eLdzdPsmTrqU9sRSCU/giphy.gif',
-  'https://media.giphy.com/media/kfLwBsvmAOwiTEryS6/giphy.gif',
   'https://media.giphy.com/media/mDHDWnsrWP6vE9rSQO/giphy.gif',
   // Rachel
   'https://media.giphy.com/media/1yMfNYjPx5IiFj5d4P/giphy.gif',
