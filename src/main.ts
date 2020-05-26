@@ -1,12 +1,12 @@
 import * as core from '@actions/core'
 import * as github from '@actions/github'
-import {ramseyGifs} from './constants'
+import { ramseyGifs } from './constants'
 
 async function run(): Promise<void> {
   try {
-    const randomCatGif =
+    const randomRamseyGif =
       ramseyGifs[Math.floor(Math.random() * ramseyGifs.length)]
-    const message = `![Cat Gif](${randomCatGif})`
+    const message = `![${randomRamseyGif.alt}](${randomRamseyGif.url})`
     const githubToken = core.getInput('GITHUB_TOKEN')
 
     const context = github.context
