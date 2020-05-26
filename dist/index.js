@@ -2024,8 +2024,8 @@ const constants_1 = __webpack_require__(582);
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const randomCatGif = constants_1.ramseyGifs[Math.floor(Math.random() * constants_1.ramseyGifs.length)];
-            const message = `![Cat Gif](${randomCatGif})`;
+            const randomRamseyGif = constants_1.ramseyGifs[Math.floor(Math.random() * constants_1.ramseyGifs.length)];
+            const message = `![${randomRamseyGif.alt}](${randomRamseyGif.url})`;
             const githubToken = core.getInput('GITHUB_TOKEN');
             const context = github.context;
             if (context.payload.pull_request == null) {
@@ -7343,6 +7343,23 @@ function authenticationBeforeRequest(state, options) {
 
 /***/ }),
 
+/***/ 478:
+/***/ (function(__unusedmodule, exports) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+class Gif {
+    constructor({ url, alt = 'Ramsey GIF' }) {
+        this.url = url;
+        this.alt = alt;
+    }
+}
+exports.default = Gif;
+
+
+/***/ }),
+
 /***/ 489:
 /***/ (function(module, __unusedexports, __webpack_require__) {
 
@@ -8552,11 +8569,15 @@ if (process.platform === 'linux') {
 /***/ }),
 
 /***/ 661:
-/***/ (function(__unusedmodule, exports) {
+/***/ (function(__unusedmodule, exports, __webpack_require__) {
 
 "use strict";
 
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const gif_1 = __importDefault(__webpack_require__(478));
 /**
  * A static list of Ramsey gifs so we
  * don't need to deal with Giphy API
@@ -8564,25 +8585,67 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 const ramseyGifs = [
     // Anthony
-    'https://media.giphy.com/media/KYjVk4CRDPUNdtT6AJ/giphy.gif',
-    'https://media.giphy.com/media/jnnlK7bvDzVPkqPsWU/giphy.gif',
-    'https://media.giphy.com/media/X96DqJfzXLH4y4kcN4/giphy.gif',
+    new gif_1.default({
+        url: 'https://media.giphy.com/media/KYjVk4CRDPUNdtT6AJ/giphy.gif',
+        alt: 'AO - Dancing in Pink Jacket'
+    }),
+    new gif_1.default({
+        url: 'https://media.giphy.com/media/jnnlK7bvDzVPkqPsWU/giphy.gif',
+        alt: 'AO - Shuffling'
+    }),
+    new gif_1.default({
+        url: 'https://media.giphy.com/media/X96DqJfzXLH4y4kcN4/giphy.gif',
+        alt: 'AO - Smart, Intelligent, High Quality'
+    }),
     // Christy
-    'https://media.giphy.com/media/vx3WWpFxSEXOzzHxJa/giphy.gif',
+    new gif_1.default({
+        url: 'https://media.giphy.com/media/vx3WWpFxSEXOzzHxJa/giphy.gif',
+        alt: 'Christy - Dancing'
+    }),
     // Dave
-    'https://media.giphy.com/media/1kHygQGV6urCSyaQga/giphy.gif',
-    'https://media.giphy.com/media/w83p9pQNeOQytb0mg0/giphy.gif',
-    'https://media.giphy.com/media/3biqzc4JvAsSQWOdUv/giphy.gif',
+    new gif_1.default({
+        url: 'https://media.giphy.com/media/1kHygQGV6urCSyaQga/giphy.gif',
+        alt: 'Dave - *clap clap* "Change!"'
+    }),
+    new gif_1.default({
+        url: 'https://media.giphy.com/media/w83p9pQNeOQytb0mg0/giphy.gif',
+        alt: "Dave - Now we've got something"
+    }),
+    new gif_1.default({
+        url: 'https://media.giphy.com/media/3biqzc4JvAsSQWOdUv/giphy.gif',
+        alt: 'Dave - Laughing'
+    }),
     // Entre
-    'https://media.giphy.com/media/9oIOz2w31kl7DEHOTY/giphy.gif',
-    'https://media.giphy.com/media/7XAQ8HRQfhD5SH1HRd/giphy.gif',
-    'https://media.giphy.com/media/pPmJWO6Uo2zxna5wcu/giphy.gif',
+    new gif_1.default({
+        url: 'https://media.giphy.com/media/9oIOz2w31kl7DEHOTY/giphy.gif',
+        alt: 'Entre - Get the Job Done'
+    }),
+    new gif_1.default({
+        url: 'https://media.giphy.com/media/7XAQ8HRQfhD5SH1HRd/giphy.gif',
+        alt: 'Entre - The Reward Is Worth the Risk'
+    }),
+    new gif_1.default({
+        url: 'https://media.giphy.com/media/pPmJWO6Uo2zxna5wcu/giphy.gif',
+        alt: 'Entre - Small Changes Matter'
+    }),
     // Hogan
-    'https://media.giphy.com/media/mDHDWnsrWP6vE9rSQO/giphy.gif',
+    new gif_1.default({
+        url: 'https://media.giphy.com/media/mDHDWnsrWP6vE9rSQO/giphy.gif',
+        alt: 'Hogan - You can do this'
+    }),
     // Rachel
-    'https://media.giphy.com/media/1yMfNYjPx5IiFj5d4P/giphy.gif',
-    'https://media.giphy.com/media/tod48ZoYHus1dMCXuk/giphy.gif',
-    'https://media.giphy.com/media/xl3Biy7X0kRlzlQBx4/giphy.gif'
+    new gif_1.default({
+        url: 'https://media.giphy.com/media/1yMfNYjPx5IiFj5d4P/giphy.gif',
+        alt: 'Rachel - Cheers'
+    }),
+    new gif_1.default({
+        url: 'https://media.giphy.com/media/tod48ZoYHus1dMCXuk/giphy.gif',
+        alt: "Rachel - It's Amazing"
+    }),
+    new gif_1.default({
+        url: 'https://media.giphy.com/media/xl3Biy7X0kRlzlQBx4/giphy.gif',
+        alt: 'Rachel - You get to decide'
+    })
 ];
 exports.default = ramseyGifs;
 
