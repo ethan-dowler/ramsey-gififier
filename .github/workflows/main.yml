@@ -22,7 +22,7 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Ramsey GIFifier
-      uses: ethan-dowler/ramsey-gififier@master
+      uses: Faten-Org/ramsey-gififier@master
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
